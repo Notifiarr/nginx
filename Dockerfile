@@ -1,5 +1,5 @@
-# Start with swag (for now).
-FROM ghcr.io/linuxserver/swag:latest@sha256:b2d23fc58d32abc1a8420950848ed4bfec0c694cb75c3e861f7d7758456acdef
+# LSIO makes a very nice nginx container.
+FROM ghcr.io/linuxserver/nginx:latest@sha256:7b97b0a629b63bccacfdfd732b9a13f0afe1aabf453154281538b800830565a5
 
 # Install custom packages.
 ARG PACKAGES=nodejs npm
