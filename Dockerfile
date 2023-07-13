@@ -1,5 +1,5 @@
 # LSIO makes a very nice nginx container.
-FROM ghcr.io/linuxserver/nginx:latest@sha256:04e539be82748aabf09e9b90f9fe3046809366249f27016e4a8161582ecd73c1
+FROM ghcr.io/linuxserver/nginx:latest@sha256:b9282a9a7203428d6943e75fdb7e15309272ff10c6f5e18a561994e2f16bb967
 
 # Install custom packages.
 RUN apk add --update nodejs npm \
