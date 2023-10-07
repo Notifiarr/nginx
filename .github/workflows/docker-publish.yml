@@ -71,7 +71,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          build_args:
+          build-args:
             INSTALL_PACKAGES=openssh-client docker gzip
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}_botmanager
