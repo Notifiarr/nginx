@@ -65,3 +65,16 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          
+      - name: Build and push bot Docker image
+        id: build-and-push-botmanager
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          build_args:
+            INSTALL_PACKAGES=openssh-client docker gzip
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}_botmanager
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
