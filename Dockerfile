@@ -1,5 +1,5 @@
 # LSIO makes a very nice nginx container.
-FROM ghcr.io/linuxserver/nginx:latest@sha256:99c5d5fc45b63df1c1edfdbe5b8fc8a21500ff6034dc67bd0666df8e4d25659f
+FROM ghcr.io/linuxserver/nginx:latest@sha256:41c608abc6d7afa464a92c6305c468711a7ed5091252463447b003466886cf1c
 
 ARG INSTALL_PACKAGES=gzip
 # Install custom packages.
