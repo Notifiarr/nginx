@@ -1,23 +1,24 @@
 {
-   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-   "extends": [
-     "config:base",
-     "docker:enableMajor",
-     "default:automergeDigest"
-   ],
-   "packageRules": [
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    "docker:enableMajor",
+    "default:automergeDigest",
+    "helpers:pinGitHubActionDigestsToSemver"
+  ],
+  "internalChecksFilter": "strict",
+  "packageRules": [
     {
-      "matchDatasources": ["docker"],
-      "matchPackageNames": [
-        "linuxserver/swag",
-        "actions/checkout",
-        "docker/setup-buildx-actio",
-        "docker/login-action",
-        "docker/metadata-action",
-        "docker/build-push-action"
-      ],
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "description": "Keep ghcr.io/linuxserver/nginx digest-pinned and automerge updates when checks pass",
+      "matchManagers": ["dockerfile"],
+      "matchPackageNames": ["ghcr.io/linuxserver/nginx"],
+      "pinDigests": true,
+      "automerge": true
+    },
+    {
+      "description": "Automerge GitHub Actions updates, including majors, when checks pass",
+      "matchManagers": ["github-actions"],
       "automerge": true
     }
   ]
- }
+}
